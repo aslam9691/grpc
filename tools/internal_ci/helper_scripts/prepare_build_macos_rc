@@ -135,7 +135,7 @@ then
   export LANG=en_US.UTF-8
 
   # Install CocoaPods via Homebrew instead of gem to avoid native extension build issues
-  brew install cocoapods@1.15
+  brew install cocoapods
   
   # Ensure the versioned binary is in your PATH
   export PATH="/usr/local/opt/cocoapods@1.15/bin:$PATH"
