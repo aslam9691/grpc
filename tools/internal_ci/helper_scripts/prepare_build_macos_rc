@@ -138,7 +138,7 @@ then
   brew install cocoapods
   
   # Ensure the versioned binary is in your PATH
-  export PATH="/usr/local/opt/cocoapods@1.15/bin:$PATH"
+  export PATH="/usr/local/opt/cocoapods/bin:$PATH"
   
   # Verify installation
   pod --version
