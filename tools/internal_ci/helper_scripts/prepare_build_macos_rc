@@ -133,8 +133,16 @@ if [ "${PREPARE_BUILD_INSTALL_DEPS_OBJC}" == "true" ]
 then
   # cocoapods
   export LANG=en_US.UTF-8
-  # use "sudo" to avoid permission error on kokoro monterey image
-  time sudo gem install cocoapods --version 1.15.2 --no-document --user-install
+
+  # Install CocoaPods via Homebrew instead of gem to avoid native extension build issues
+  brew install cocoapods@1.15
+  
+  # Ensure the versioned binary is in your PATH
+  export PATH="/usr/local/opt/cocoapods@1.15/bin:$PATH"
+  
+  # Verify installation
+  pod --version
+  
   # pre-fetch cocoapods master repo's most recent commit only
   mkdir -p ~/.cocoapods/repos
   time git clone --depth 1 https://github.com/CocoaPods/Specs.git ~/.cocoapods/repos/master
