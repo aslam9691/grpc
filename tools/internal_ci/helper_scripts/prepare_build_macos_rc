@@ -136,6 +136,7 @@ then
 
   # Install CocoaPods via Homebrew instead of gem to avoid native extension build issues
   brew install cocoapods
+  brew link --overwrite cocoapods
   
   # Ensure the versioned binary is in your PATH
   export PATH="/usr/local/opt/cocoapods/bin:$PATH"
