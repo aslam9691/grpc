@@ -134,11 +134,11 @@ then
   # cocoapods
   export LANG=en_US.UTF-8
 
-# 1. Install a modern Ruby version (3.2 is compatible with CocoaPods 1.15+)
-  brew install ruby@3.0
+# 1. Install a modern Ruby version
+  brew install ruby
   
   # 2. Add the modern Ruby to your PATH *before* the system paths
-  export PATH="/usr/local/opt/ruby@3.0/bin:$PATH"
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
   
   # 3. Use gem to install CocoaPods using the modern Ruby
   # Using --user-install and ensuring we use the newly installed gem binary
