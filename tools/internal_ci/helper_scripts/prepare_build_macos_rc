@@ -134,24 +134,11 @@ then
   # cocoapods
   export LANG=en_US.UTF-8
 
-  # 1. Install a modern Ruby version
-  brew install ruby
+  # 1. Install CocoaPods directly via Homebrew
+  # This avoids permission issues and manages Ruby dependencies automatically
+  brew install cocoapods
   
-  # 2.Ensure the Homebrew Ruby is used
-  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
-  # 3. Use gem to install CocoaPods
-  gem install cocoapods -v 1.15.2 --no-document
-  
-  # 4. Use a user-writable directory to avoid permission issues
-  mkdir -p "$HOME/.local/bin"
-  rm -f "$HOME/.local/bin/pod"
-  ln -s "$(gem env gemdir)/bin/pod" "$HOME/.local/bin/pod"
-  
-  # Add the local bin to PATH as well
-  export PATH="$HOME/.local/bin:$PATH"
-  
-  # 5. Verify the environment
+  # 2. Verify the installation
   ruby --version
   pod --version
   
