@@ -134,18 +134,22 @@ then
   # cocoapods
   export LANG=en_US.UTF-8
 
-  # 1. Clean up existing conflicting binaries before installing
+# 1. Install a modern Ruby version (3.2 is compatible with CocoaPods 1.15+)
+  brew install ruby@3.2
+  
+  # 2. Add the modern Ruby to your PATH *before* the system paths
+  export PATH="/usr/local/opt/ruby@3.2/bin:$PATH"
+  
+  # 3. Use gem to install CocoaPods using the modern Ruby
+  # Using --user-install and ensuring we use the newly installed gem binary
+  gem install cocoapods -v 1.15.2 --no-document
+  
+  # 4. Clean up existing links to ensure the new 'pod' is used
   rm -f /usr/local/bin/pod
-  rm -f /usr/local/bin/xcodeproj
+  ln -s $(gem env gemdir)/bin/pod /usr/local/bin/pod
   
-  # Install CocoaPods via Homebrew instead of gem to avoid native extension build issues
-  brew install cocoapods
-  brew link --overwrite cocoapods
-  
-  # Ensure the versioned binary is in your PATH
-  export PATH="/usr/local/opt/cocoapods/bin:$PATH"
-  
-  # Verify installation
+  # 5. Verify the environment
+  ruby --version
   pod --version
   
   # pre-fetch cocoapods master repo's most recent commit only
