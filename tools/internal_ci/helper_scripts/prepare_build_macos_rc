@@ -135,7 +135,7 @@ then
   export LANG=en_US.UTF-8
 
 # 1. Install a modern Ruby version (3.2 is compatible with CocoaPods 1.15+)
-  brew install ruby@3.2
+  brew install ruby@3.0
   
   # 2. Add the modern Ruby to your PATH *before* the system paths
   export PATH="/usr/local/opt/ruby@3.2/bin:$PATH"
