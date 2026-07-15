@@ -1622,7 +1622,7 @@ static dispatch_once_t initGlobalInterceptorFactory;
     options.hostNameOverride = [[self class] hostNameOverride];
     options.keepaliveInterval = 1.5;
     options.keepaliveTimeout = 0;
-    options.additionalChannelArgs = @{@"grpc.http2.ping_timeout_ms": @200};
+    options.additionalChannelArgs = @{@"grpc.http2.ping_timeout_ms" : @200};
 
     __weak RMTTestService *weakService = service;
     GRPCStreamingProtoCall *call = [service
