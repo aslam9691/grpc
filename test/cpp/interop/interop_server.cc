@@ -52,7 +52,6 @@ ABSL_FLAG(int32_t, port, 0, "Server port.");
 ABSL_FLAG(int32_t, max_send_message_size, -1, "The maximum send message size.");
 ABSL_FLAG(bool, ack_pings, true, "Whether to acknowledge HTTP/2 pings.");
 
-
 using grpc::Server;
 using grpc::ServerContext;
 using grpc::ServerCredentials;
