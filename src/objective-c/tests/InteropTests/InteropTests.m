@@ -1601,8 +1601,6 @@ static dispatch_once_t initGlobalInterceptorFactory;
 // TODO(b/268379869): This test has a race and is flaky in any configurations. One possible way to
 // deflake this test is to find a way to disable ping ack on the interop server for this test case.
 - (void)testKeepaliveWithV2API {
-  return;
-
   GRPCTestRunWithFlakeRepeats(self, ^(GRPCTestWaiter waiterBlock, GRPCTestAssert assertBlock) {
     RMTTestService *service = [RMTTestService serviceWithHost:[[self class] host]];
     __weak XCTestExpectation *expectation = [self expectationWithDescription:@"Keepalive"];
