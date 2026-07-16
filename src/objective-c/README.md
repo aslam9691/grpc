@@ -255,8 +255,8 @@ ld: framework not found openssl
 updating `-framework openssl` in Other Linker Flags to `-framework openssl_grpc` in your project
 may resolve this issue (see [#16821](https://github.com/grpc/grpc/issues/16821)).
 
-## Add post install instruction in your podfile to fix build issue
-Add below code in your Podfile
+## c++17 issue with abseil
+If build fail with symbol not found error Add below code in your Podfile
 ```
 post_install do |installer|
   installer.pods_project.targets.each do |target|
